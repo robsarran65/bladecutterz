@@ -7,14 +7,12 @@ const phone = "(407) 334-7247";
 const phoneLink = "tel:+14073347247";
 
 const services = [
-  ["Mowing", "Lawn Care & Maintenance", "Mowing, edging, trimming, blowing, lawn cleanup, and dependable recurring maintenance."],
-  ["Shrub", "Shrub & Hedge Care", "Careful trimming, shaping, pruning, cleanup, and landscape bed maintenance."],
-  ["Palm", "Tree Trimming", "Routine trimming for smaller trees, palms, branches, and overgrowth to improve appearance and plant health."],
-  ["Water", "Irrigation Services", "Sprinkler inspections, adjustments, minor repairs, head replacement, and watering optimization."],
-  ["Mulch", "Mulching", "Fresh mulch installation for flower beds, trees, shrubs, and landscaped areas."],
-  ["Cleanup", "Landscape Cleanup", "Leaf and debris removal, seasonal cleanup, overgrowth removal, and bed restoration."],
-  ["Tropical", "Palm & Tropical Plant Care", "Thoughtful maintenance and trimming for Florida palms and tropical landscaping."],
-  ["Care", "Landscape Maintenance", "Ongoing care for lawns, shrubs, trees, flower beds, mulch, and exterior landscaped areas."],
+  ["Lawn Care & Maintenance", "Mowing, edging, trimming, blowing, lawn cleanup, and dependable recurring maintenance."],
+  ["Shrub & Hedge Care", "Careful trimming, shaping, pruning, cleanup, and landscape bed maintenance."],
+  ["Tree Trimming", "Routine trimming for smaller trees, palms, branches, and overgrowth to improve appearance and plant health."],
+  ["Mulching", "Fresh mulch installation for flower beds, trees, shrubs, and landscaped areas."],
+  ["Palm & Tropical Plant Care", "Thoughtful maintenance and trimming for Florida palms and tropical landscaping."],
+  ["Landscape Maintenance", "Ongoing care for lawns, shrubs, trees, flower beds, mulch, and exterior landscaped areas."],
 ];
 
 const portfolio = [
@@ -42,7 +40,7 @@ const testimonials = [
 ];
 
 function Brand() {
-  return <span className="brand"><Image unoptimized src="/images/bladecutterz-logo.png" alt="" width={72} height={72}/><span><strong>BladeCutterz</strong><small>INC. · LAWN & LANDSCAPE</small></span></span>;
+  return <span className="brand"><Image unoptimized src="/images/bladecutterz-logo-official.webp" alt="BladeCutterz Inc." width={709} height={509}/></span>;
 }
 
 export default function Home() {
@@ -86,7 +84,11 @@ export default function Home() {
 
       <section className="section" id="services"><div className="container">
         <div className="heading split"><div><p className="eyebrow">What we do</p><h2>Complete care for your<br/><em>outdoor space.</em></h2></div><p>From weekly lawn maintenance to seasonal cleanups, we provide the dependable care your property needs to look its best all year.</p></div>
-        <div className="serviceGrid">{services.map(([icon,title,text],i) => <article className="service" key={title}><span className="number">{String(i+1).padStart(2,"0")}</span><span className="roundIcon">{icon.slice(0,1)}</span><h3>{title}</h3><p>{text}</p><a href="#contact">Request this service →</a></article>)}</div>
+        <div className="serviceGrid">{services.map(([title,text],i) => <article className="service" key={title}><span className="number">{String(i+1).padStart(2,"0")}</span><h3>{title}</h3><p>{text}</p><a href="#contact">Request this service →</a></article>)}</div>
+        <article className="irrigationFeature">
+          <div className="irrigationLogo"><Image unoptimized src="/images/nona-irrigation-logo.webp" alt="Nona Irrigation" width={549} height={611}/></div>
+          <div className="irrigationCopy"><p className="eyebrow">Dedicated irrigation care</p><h3>Irrigation &amp; Sprinkler Services</h3><p>Sprinkler inspections, system adjustments, minor repairs, irrigation head replacement, and watering optimization for healthy Florida lawns and landscapes.</p><a href="#contact">Request irrigation service →</a></div>
+        </article>
         <div className="inlineCta"><div><p>Not sure what your property needs?</p><h3>We’ll help you build the right service plan.</h3></div><a className="button tan" href={phoneLink}>Request a Free Estimate — {phone}</a></div>
       </div></section>
 
@@ -112,14 +114,14 @@ export default function Home() {
           <label>Phone Number<input required name="phone" type="tel" autoComplete="tel" placeholder="(407) 555-0123"/></label>
           <label>Email Address<input required name="email" type="email" autoComplete="email" placeholder="you@example.com"/></label>
           <label>Property Address or ZIP<input required name="location" autoComplete="postal-code" placeholder="Address or ZIP code"/></label>
-          <label>Service Needed<select required name="service" defaultValue=""><option value="" disabled>Select a service</option>{["Lawn Care","Shrub or Hedge Trimming","Tree Trimming","Irrigation","Mulching","Landscape Cleanup","Landscape Maintenance","Other"].map(x=><option key={x}>{x}</option>)}</select></label>
+          <label>Service Needed<select required name="service" defaultValue=""><option value="" disabled>Select a service</option>{["Lawn Care","Shrub or Hedge Trimming","Tree Trimming","Irrigation","Mulching","Landscape Maintenance","Other"].map(x=><option key={x}>{x}</option>)}</select></label>
           <label>Preferred Contact<select required name="contact" defaultValue="Phone call"><option>Phone call</option><option>Text message</option><option>Email</option></select></label>
           <label className="full">Message<textarea name="message" rows={4} placeholder="Tell us about your lawn or landscaping needs"/></label>
         </div><button className="button green submit" type="submit">Get Your Free Lawn Care Estimate →</button>{submitted && <p className="success" role="status">Thanks! This form is ready to connect to your inbox. Please call {phone} for immediate scheduling.</p>}<small className="note">No obligation. Your information stays private.</small></form>
       </div></section>
     </main>
 
-    <footer><div className="container footerGrid"><div><a href="#home"><Brand/></a><p>Dependable lawn care and landscape maintenance for Orlando, Lake Nona, Winter Springs, and nearby communities.</p></div><div><strong>Explore</strong><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#portfolio">Portfolio</a></div><div><strong>Services</strong><a href="#services">Lawn maintenance</a><a href="#services">Shrub & tree care</a><a href="#services">Irrigation</a><a href="#services">Mulching & cleanup</a></div><div><strong>Contact</strong><a className="footerPhone" href={phoneLink}>{phone}</a><span>32832 · 32708</span><a href="#contact">Request an estimate →</a></div></div><div className="container footerBottom"><span>© {new Date().getFullYear()} BladeCutterz Inc. All rights reserved.</span><span>License and insurance details can be added when verified.</span></div></footer>
+    <footer><div className="container footerGrid"><div><a href="#home"><Brand/></a><p>Dependable lawn care and landscape maintenance for Orlando, Lake Nona, Winter Springs, and nearby communities.</p></div><div><strong>Explore</strong><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#portfolio">Portfolio</a></div><div><strong>Services</strong><a href="#services">Lawn maintenance</a><a href="#services">Shrub & tree care</a><a href="#services">Irrigation</a><a href="#services">Mulching</a></div><div><strong>Contact</strong><a className="footerPhone" href={phoneLink}>{phone}</a><span>32832 · 32708</span><a href="#contact">Request an estimate →</a></div></div><div className="container footerBottom"><span>© {new Date().getFullYear()} BladeCutterz Inc. All rights reserved.</span><span className="siteCredit">Website designed and developed by <a href="https://www.sarranai.com/" target="_blank" rel="noopener">Sarran AI Solutions</a></span></div></footer>
     <a className="mobileCall" href={phoneLink}><span>Call for a free estimate</span><strong>{phone}</strong></a>
   </>;
 }

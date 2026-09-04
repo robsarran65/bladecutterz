@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./brand-update.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bladecutterz-florida.chatgpt-sites.com"),
@@ -39,7 +40,7 @@ const schema = {
     { "@type": "Place", name: "ZIP code 32708" },
   ],
   priceRange: "$$",
-  serviceType: ["Lawn care", "Landscape maintenance", "Shrub trimming", "Tree trimming", "Irrigation services", "Mulching", "Landscape cleanup"],
+  serviceType: ["Lawn care", "Landscape maintenance", "Shrub trimming", "Tree trimming", "Irrigation services", "Mulching"],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
