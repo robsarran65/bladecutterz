@@ -8,13 +8,16 @@ Modern, responsive lawn care and landscaping website for BladeCutterz Inc., serv
 
 - Mobile-friendly single-page layout
 - Click-to-call actions for `(407) 334-7247`
-- Eight lawn care and landscaping service categories
+- Six uniform lawn care and landscaping service cards
+- Separate branded Nona Irrigation service panel
 - Company story and service-area information
 - Twelve-image Florida landscaping portfolio
 - Starter testimonials with local city labels
 - Free-estimate contact form interface
 - Orlando-area SEO titles, descriptions, structured data, sitemap, and robots rules
+- Official BladeCutterz and Nona Irrigation logos
 - Open Graph social preview and custom BladeCutterz branding
+- Linked Sarran AI Solutions website credit in the footer
 - Accessible navigation, focus states, and reduced-motion support
 
 ## Important content notes
@@ -77,6 +80,7 @@ npm run lint
 | --- | --- |
 | `app/page.tsx` | Website sections, service content, portfolio, testimonials, and form interface |
 | `app/globals.css` | Responsive layout, brand styles, accessibility, and portfolio sizing |
+| `app/brand-update.css` | Official logo, service-card, irrigation-panel, and footer-credit refinements |
 | `app/layout.tsx` | Page metadata, social metadata, and local business structured data |
 | `app/robots.ts` | Search crawler rules |
 | `app/sitemap.ts` | XML sitemap configuration |
